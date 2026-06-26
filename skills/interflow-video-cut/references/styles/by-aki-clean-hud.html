@@ -1,0 +1,146 @@
+<!--
+  Style: by-aki-clean-hud (Aki 清透 HUD · 不压暗原视频的口播信息层)
+  ─────────────────────────────────────────────────────────────────────
+  基础：从 `glass-hud` 二开。保留 HUD 文字结构、章节感、编号列表、进度轴和轻入场动画；
+  去掉全屏暗遮罩和大面积玻璃底，不整体改变原视频亮度。只在文字背后做局部轻磨砂，
+  让口播原片保持 full-bleed 原画质。
+
+  适用：
+    - 想保留原视频画质 / 亮度 / 人脸质感
+    - 口播解释、教程、方法论拆解
+    - 需要 HUD 文字动画，但不想要 nebula/neon 那种重视觉包装
+
+  Tokens
+    accent      #E0894A  暖橙，可按项目改为科技蓝 #5B8CFF
+    ink         #FFF7EF  暖白
+    ink-dim     rgba(255,244,232,.72)
+    chip-bg     rgba(24,18,13,.26)
+    chip-edge   rgba(255,231,210,.22)
+
+  Composition-level 建议：
+    - layout: overlay
+    - frame: clean
+    - video: full-bleed 原视频，不加全屏遮罩
+    - 可加顶部 top-rail 和底部 progress，但不要加全屏 legibility gradient
+-->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>style · by-aki-clean-hud (Aki 清透 HUD)</title>
+<style>
+html,body{margin:0;background:#111;font-family:Arial,sans-serif}
+.stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;transform-origin:top left;transform:scale(.5)}
+.stage::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#263241,#15191f);opacity:.9}
+.card-host{position:absolute;inset:0}
+</style>
+</head>
+<body>
+<div class="stage"><div class="card-host">
+
+<div class="card" data-card-id="ref-by-aki-clean-hud">
+  <style>
+    .card[data-card-id="ref-by-aki-clean-hud"] .root{
+      --accent:#E0894A;
+      --ink:#FFF7EF;
+      --ink-dim:rgba(255,244,232,.72);
+      --chip-bg:rgba(24,18,13,.26);
+      --chip-edge:rgba(255,231,210,.22);
+      width:100%;height:100%;position:relative;overflow:hidden;box-sizing:border-box;
+      background:transparent;color:var(--ink);
+      font-family:'Inter',Arial,sans-serif;
+      container-type:inline-size;
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .top-rail{
+      position:absolute;left:44px;right:44px;top:42px;z-index:5;
+      display:flex;justify-content:space-between;align-items:center;
+      font:800 18px/1 'Inter',Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;
+      color:var(--ink-dim);text-shadow:0 2px 14px rgba(0,0,0,.42);
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .top-rail .rec{color:var(--accent)}
+    .card[data-card-id="ref-by-aki-clean-hud"] .hud{
+      position:absolute;left:46px;right:46px;bottom:116px;z-index:6;padding:0;color:var(--ink);
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .kicker{
+      display:inline-flex;align-items:center;gap:12px;
+      padding:12px 16px;border-radius:999px;
+      background:rgba(28,20,14,.30);
+      border:1px solid rgba(224,137,74,.42);
+      -webkit-backdrop-filter:blur(10px) saturate(120%);
+      backdrop-filter:blur(10px) saturate(120%);
+      font:900 18px/1 'Inter',Arial,sans-serif;letter-spacing:.26em;text-transform:uppercase;
+      color:#FFD7B7;box-shadow:0 10px 28px rgba(0,0,0,.12);
+      max-width:92%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .dot{
+      width:9px;height:9px;border-radius:50%;background:var(--accent);
+      box-shadow:0 0 14px rgba(224,137,74,.8);flex:0 0 auto;
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .title{
+      margin:18px 0 0;max-width:900px;
+      font:900 clamp(56px,7.2cqi,76px)/1.08 'Inter',Arial,sans-serif;
+      letter-spacing:-.045em;color:var(--ink);text-wrap:balance;overflow-wrap:anywhere;
+      text-shadow:0 2px 18px rgba(0,0,0,.50),0 0 1px rgba(0,0,0,.7);
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .title .accent{
+      color:var(--accent);
+      text-shadow:0 2px 16px rgba(0,0,0,.46),0 0 20px rgba(224,137,74,.34);
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .list{
+      margin-top:26px;display:grid;gap:12px;max-width:820px;
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .item{
+      display:grid;grid-template-columns:48px 1fr auto;gap:16px;align-items:center;
+      min-height:58px;padding:12px 16px;border-radius:18px;
+      background:var(--chip-bg);border:1px solid var(--chip-edge);
+      -webkit-backdrop-filter:blur(8px) saturate(115%);
+      backdrop-filter:blur(8px) saturate(115%);
+      box-shadow:0 10px 26px rgba(0,0,0,.10);
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .num{
+      color:var(--accent);font:900 20px/1 'Inter',Arial,sans-serif;letter-spacing:.08em;
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .txt{
+      color:var(--ink);font:800 clamp(24px,3.0cqi,30px)/1.2 'Inter',Arial,sans-serif;
+      overflow-wrap:anywhere;text-shadow:0 2px 12px rgba(0,0,0,.42);
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .tag{
+      color:var(--ink-dim);font:800 17px/1 'Inter',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .caption{
+      position:absolute;left:46px;right:46px;bottom:70px;z-index:6;text-align:center;
+      color:rgba(255,247,239,.76);font:700 22px/1.25 'Inter',Arial,sans-serif;
+      letter-spacing:.04em;text-shadow:0 2px 14px rgba(0,0,0,.45);overflow-wrap:anywhere;
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .progress{
+      position:absolute;left:46px;right:46px;bottom:54px;z-index:6;height:3px;
+      background:rgba(255,255,255,.22);border-radius:999px;overflow:hidden;
+    }
+    .card[data-card-id="ref-by-aki-clean-hud"] .bar{
+      width:52%;height:100%;background:linear-gradient(90deg,var(--accent),#FFD7B7);
+      box-shadow:0 0 16px rgba(224,137,74,.58);
+    }
+  </style>
+  <div class="root">
+    <div class="top-rail">
+      <span id="ref-by-aki-clean-hud-rail" data-anim="fade-in" data-anim-at="0.08" data-anim-duration="0.45">BY AKI / CLEAN HUD</span>
+      <span class="rec" id="ref-by-aki-clean-hud-rec" data-anim="fade-in" data-anim-at="0.16" data-anim-duration="0.45">● REC · 01</span>
+    </div>
+    <section class="hud">
+      <div class="kicker" id="ref-by-aki-clean-hud-kicker" data-anim="settle" data-anim-at="0.24" data-anim-duration="0.55"><span class="dot"></span> CLEAN GLASS HUD</div>
+      <h1 class="title" id="ref-by-aki-clean-hud-title" data-anim="settle" data-anim-at="0.38" data-anim-duration="0.70">不压暗原视频，<span class="accent">只让文字浮起来</span></h1>
+      <div class="list">
+        <div class="item" id="ref-by-aki-clean-hud-item-1" data-anim="settle" data-anim-at="0.76" data-anim-duration="0.50"><span class="num">01</span><span class="txt">保留镜头亮度</span><span class="tag">native</span></div>
+        <div class="item" id="ref-by-aki-clean-hud-item-2" data-anim="settle" data-anim-at="0.88" data-anim-duration="0.50"><span class="num">02</span><span class="txt">局部文字磨砂底</span><span class="tag">hud</span></div>
+        <div class="item" id="ref-by-aki-clean-hud-item-3" data-anim="settle" data-anim-at="1.00" data-anim-duration="0.50"><span class="num">03</span><span class="txt">继承暖玻文字动画</span><span class="tag">motion</span></div>
+      </div>
+    </section>
+    <div class="caption" id="ref-by-aki-clean-hud-caption" data-anim="fade-in" data-anim-at="1.20" data-anim-duration="0.50">适合口播解释：不遮脸、不压暗，只增强信息层</div>
+    <div class="progress"><div class="bar" id="ref-by-aki-clean-hud-bar" data-anim="grow-x" data-anim-at="0.40" data-anim-duration="0.8" data-anim-target-w="520"></div></div>
+  </div>
+</div>
+
+</div></div>
+</body>
+</html>

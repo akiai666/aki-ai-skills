@@ -1,23 +1,31 @@
 # Aki AI Skills
 
-Public Aki AI skill templates.
+Open-source Aki AI skills.
 
-This repository contains selected public skills from Aki's private skill workspace. It currently contains:
+This repository contains public, reusable skill templates. It currently contains:
 
 - `aki-ip-viral-cover`: generate three high-impact Aki IP cover variants from a title.
+- `interflow-video-cut`: turn a local talking-head video into a card-based HUD overlay video.
 
 ## Usage
 
 Each skill lives under `skills/<skill-name>/` and includes its own `SKILL.md`.
 
-The public templates do not include private portraits, private style references, credentials, or generated drafts. Follow each skill's reference instructions and provide your own local inputs.
+The public templates must not include private portraits, private style references, credentials, generated drafts, or local-only cache paths. Follow each skill's reference instructions and provide your own local inputs.
 
 ## Maintenance model
 
-Public skills can be improved directly in this repository. Aki's private skill workspace records the last public commit it has synced.
+Use this repository for skills Aki wants to share or open-source. Keep personal-only workflows, secrets, generated media, and private assets out of this repo.
 
-- Public-first change: edit this repository, push, then run `pull-public` from the private workspace.
-- Private-first change: run `publish-public` from the private workspace. It will refuse to overwrite public changes to the same managed files since the last synced public commit.
+- Open-source change: edit this repository, verify, commit, and push.
+- Local install refresh: copy the approved public skill into the active agent skill directory.
+- If a skill is not public-safe yet, sanitize it before adding it here.
+
+Install or refresh a public skill locally:
+
+```bash
+bash scripts/sync_to_agents.sh interflow-video-cut
+```
 
 ## License
 
