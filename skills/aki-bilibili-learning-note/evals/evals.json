@@ -1,0 +1,40 @@
+{
+  "skill_name": "aki-bilibili-learning-note",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "把附件中的访谈型 note JSON 渲染成一个可以离线打开的 B站视频学习导航 HTML，并完成校验。",
+      "expected_output": "一个阅读优先的单文件 HTML，包含快速判断、高光、连续正文、金句、证据、精确时间跳转和可搜索逐字稿。",
+      "files": ["tests/fixtures/sample_note.json", "tests/fixtures/frame.svg"],
+      "expectations": [
+        "输出是一个无需外部图片或脚本即可阅读的单文件 HTML",
+        "页面包含 30 秒判断、6-12 个高光、图文全文、原话金句、查证区和可搜索逐字稿",
+        "30 秒判断中的优先回看内容可以直接跳到原视频对应秒数",
+        "至少一个高光、一个正文段落和一条金句能跳到同一 BV 视频的准确秒数",
+        "HTML 不包含本机绝对路径、密钥或临时工作目录"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "使用附件样例检查这个 Skill 的产品输出是否满足移动端阅读优先，并指出任何会阻止交付的问题。不要更改样例内容。",
+      "expected_output": "通过脚本和页面检查给出明确验收结果；若无阻塞问题，保留一份可审阅 HTML。",
+      "files": ["tests/fixtures/sample_note.json", "tests/fixtures/frame.svg"],
+      "expectations": [
+        "执行 Skill 自带的 render 与 validate 命令，而不是仅口头评估",
+        "审阅 HTML 在窄屏下使用单列布局且正文、按钮和逐字稿没有明显溢出",
+        "明确核对截图已经嵌入且 B站时间链接可由页面直接访问"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "根据 Skill 的内容契约，审核附件访谈学习笔记的数据结构，重点检查引用纪律、观点归属和产品四层是否齐全，然后生成最终 HTML。",
+      "expected_output": "一份通过结构审核和渲染校验的 HTML，并报告任何不确定内容。",
+      "files": ["tests/fixtures/sample_note.json", "tests/fixtures/frame.svg"],
+      "expectations": [
+        "核心观点、引语和逐字稿均保留可验证时间戳",
+        "没有把主持人与嘉宾观点混为一谈，也没有虚构说话人身份",
+        "最终 HTML 通过 Skill 自带 validate 命令"
+      ]
+    }
+  ]
+}

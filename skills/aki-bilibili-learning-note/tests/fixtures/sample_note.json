@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "AI 产品为什么需要从工作流出发",
+    "subtitle": "一场关于用户需求、模型能力与产品边界的示例访谈",
+    "bvid": "BV1AB411C7mD",
+    "source_url": "https://www.bilibili.com/video/BV1AB411C7mD/",
+    "part": 1,
+    "duration_seconds": 1800,
+    "creator": "示例频道",
+    "published_at": "2026-07-01",
+    "participants": ["主持人", "产品经理"],
+    "content_type": "interview",
+    "tags": ["AI 产品", "工作流", "用户研究"]
+  },
+  "quick_preview": {
+    "what_it_is": "视频讨论 AI 产品应如何从真实任务而不是模型功能出发。",
+    "main_conclusion": "真正稳定的产品价值来自被反复完成的用户任务，而不是一次性的模型展示。",
+    "suitable_for": ["AI 产品经理", "独立开发者", "希望改造工作流的团队"],
+    "watch_first": [
+      {"title": "用户任务与模型能力的区别", "start": 240},
+      {"title": "为什么摘要不等于学习", "start": 750}
+    ],
+    "reading_minutes": 7
+  },
+  "highlights": [
+    {"id": "h1", "type": "观点", "title": "先找重复任务", "summary": "高频且有明确完成标准的任务，更适合成为首个产品切口。", "start": 90, "end": 150, "image_path": "frame.svg"},
+    {"id": "h2", "type": "案例", "title": "从会议纪要到决策追踪", "summary": "示例说明价值不在转录本身，而在后续行动是否闭环。", "start": 240, "end": 320, "image_path": "frame.svg"},
+    {"id": "h3", "type": "争议", "title": "模型越强，产品越简单吗", "summary": "嘉宾认为能力提升会隐藏技术，却不会自动消除业务复杂度。", "start": 430, "end": 520, "image_path": "frame.svg"},
+    {"id": "h4", "type": "金句", "title": "演示不是工作流", "summary": "一句话点明偶尔成功的生成与稳定交付之间的差距。", "start": 620, "end": 660, "image_path": "frame.svg"},
+    {"id": "h5", "type": "论证", "title": "用失败路径定义边界", "summary": "先描述什么情况下不能交付，才能形成可信的产品承诺。", "start": 850, "end": 950, "image_path": "frame.svg"},
+    {"id": "h6", "type": "结论", "title": "先完成一条闭环", "summary": "首版产品只需让一个核心任务从输入走到可复用结果。", "start": 1440, "end": 1530, "image_path": "frame.svg"}
+  ],
+  "article_sections": [
+    {
+      "id": "task-first",
+      "title": "从用户要完成的事开始",
+      "summary": "模型能力只是原料，用户任务才决定产品形态。",
+      "start": 60,
+      "image_path": "frame.svg",
+      "paragraphs": [
+        {"speaker": "产品经理", "text": "用户通常不会说自己需要一个语言模型，他会说需要更快判断一个视频是否值得看。", "start": 78, "emphasis": "更快判断一个视频是否值得看"},
+        {"text": "因此，产品设计先要明确输入、完成标准和最终资产，再决定在哪个环节使用模型。", "start": 132}
+      ]
+    },
+    {
+      "id": "learning-not-summary",
+      "title": "摘要不等于学习",
+      "summary": "过度压缩会抹掉论证、故事和说话人的真实立场。",
+      "start": 600,
+      "image_path": "frame.svg",
+      "paragraphs": [
+        {"speaker": "主持人", "text": "如果只留下三条结论，用户很难判断这些结论为什么成立。", "start": 610},
+        {"speaker": "产品经理", "text": "学习页要保留推理过程，同时给每个重要观点一个回到原片的入口。", "start": 665, "emphasis": "回到原片的入口"}
+      ]
+    },
+    {
+      "id": "first-loop",
+      "title": "首版只完成一条闭环",
+      "summary": "阅读、定位和沉淀构成最小但完整的产品。",
+      "start": 1380,
+      "image_path": "frame.svg",
+      "paragraphs": [
+        {"text": "用户先阅读整体脉络，再从高光跳看原视频，最后把单文件 HTML 保存进自己的知识库。", "start": 1410},
+        {"text": "聊天、账号与在线编辑都可以后置，因为它们不是验证核心价值所必需的。", "start": 1492, "emphasis": "不是验证核心价值所必需的"}
+      ]
+    }
+  ],
+  "quotes": [
+    {"text": "演示证明模型能做一次，工作流证明产品能反复交付。", "speaker": "产品经理", "context": "讨论模型演示与产品稳定性的区别。", "start": 620},
+    {"text": "不要替用户看完，要帮用户更快找到值得看的地方。", "speaker": "主持人", "context": "讨论学习型视频工具的核心价值。", "start": 760}
+  ],
+  "evidence": [
+    {"label": "高频任务", "value": "每周 3 次", "text": "团队以任务出现频率判断是否值得产品化。", "start": 300, "caveat": "这是视频中的示例口径，并非普遍行业基准。"},
+    {"label": "首版边界", "text": "输入一个链接，输出一份可回看、可保存的单文件学习页。", "start": 1450}
+  ],
+  "disagreements": [
+    {
+      "title": "是否应该在首版加入聊天",
+      "positions": ["主持人：聊天能增加探索感。", "产品经理：会分散对阅读与回看的验证。"],
+      "resolution": "双方最终同意先验证阅读与精准跳转。"
+    }
+  ],
+  "actions": ["列出目标用户每周反复完成的三个任务。", "为首版写出明确的输入、输出与失败边界。"],
+  "chapters": [
+    {"id": "task-first", "title": "从任务开始", "start": 60},
+    {"id": "learning-not-summary", "title": "摘要不等于学习", "start": 600},
+    {"id": "first-loop", "title": "完成一条闭环", "start": 1380}
+  ],
+  "caveats": ["本文为离线功能验收样例，内容并非来自真实视频。"],
+  "transcript": [
+    {"start": 60, "end": 120, "speaker": "主持人", "text": "我们先讨论用户究竟想完成什么，而不是模型有哪些能力。"},
+    {"start": 120, "end": 210, "speaker": "产品经理", "text": "用户需要更快判断视频价值，并找到值得回看的原片位置。"},
+    {"start": 600, "end": 700, "speaker": "产品经理", "text": "摘要如果只留下结论，就会丢掉论证、故事和上下文。"},
+    {"start": 700, "end": 820, "speaker": "主持人", "text": "所以学习页要把阅读和跳回原片连接起来。"},
+    {"start": 1380, "end": 1510, "speaker": "产品经理", "text": "首版完成阅读、定位和沉淀这一条闭环就够了。"}
+  ]
+}

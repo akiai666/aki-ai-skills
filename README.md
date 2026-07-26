@@ -6,6 +6,8 @@ This repository contains public, reusable skill templates. It currently contains
 
 - `aki-ip-viral-cover`: generate three high-impact Aki IP cover variants from a title.
 - `interflow-video-cut`: turn a local talking-head video into a card-based HUD overlay video.
+- `aki-bilibili-learning-note`: turn one Bilibili long-video link into a
+  reading-first, timestamped, self-contained HTML learning note.
 
 ## Usage
 

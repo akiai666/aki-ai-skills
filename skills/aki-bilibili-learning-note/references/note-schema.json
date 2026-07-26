@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Long Video Learning Note",
+  "type": "object",
+  "required": ["meta", "quick_preview", "highlights", "article_sections", "quotes", "transcript"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["title", "bvid", "source_url", "duration_seconds", "content_type"],
+      "properties": {
+        "title": {"type": "string"},
+        "subtitle": {"type": "string"},
+        "bvid": {"type": "string", "pattern": "^BV[0-9A-Za-z]+$"},
+        "source_url": {"type": "string"},
+        "part": {"type": "integer", "minimum": 1},
+        "duration_seconds": {"type": "number", "minimum": 1},
+        "creator": {"type": "string"},
+        "published_at": {"type": "string"},
+        "participants": {"type": "array", "items": {"type": "string"}},
+        "content_type": {"enum": ["interview", "tutorial", "business", "talk"]},
+        "tags": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "quick_preview": {
+      "type": "object",
+      "required": ["what_it_is", "main_conclusion", "suitable_for", "watch_first", "reading_minutes"],
+      "properties": {
+        "what_it_is": {"type": "string"},
+        "main_conclusion": {"type": "string"},
+        "suitable_for": {"type": "array", "items": {"type": "string"}},
+        "watch_first": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["title", "start"],
+            "properties": {
+              "title": {"type": "string"},
+              "start": {"type": "number", "minimum": 0}
+            }
+          }
+        },
+        "reading_minutes": {"type": "integer", "minimum": 1}
+      }
+    },
+    "highlights": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "title", "summary", "start"],
+        "properties": {
+          "id": {"type": "string"},
+          "type": {"enum": ["观点", "论证", "故事", "案例", "争议", "金句", "结论", "步骤", "风险"]},
+          "title": {"type": "string"},
+          "summary": {"type": "string"},
+          "start": {"type": "number", "minimum": 0},
+          "end": {"type": "number", "minimum": 0},
+          "image_path": {"type": "string"}
+        }
+      }
+    },
+    "article_sections": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "paragraphs"],
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "summary": {"type": "string"},
+          "start": {"type": "number", "minimum": 0},
+          "image_path": {"type": "string"},
+          "paragraphs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["text"],
+              "properties": {
+                "text": {"type": "string"},
+                "start": {"type": "number", "minimum": 0},
+                "speaker": {"type": "string"},
+                "emphasis": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "quotes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "start"],
+        "properties": {
+          "text": {"type": "string"},
+          "start": {"type": "number", "minimum": 0},
+          "speaker": {"type": "string"},
+          "context": {"type": "string"}
+        }
+      }
+    },
+    "evidence": {"type": "array"},
+    "disagreements": {"type": "array"},
+    "actions": {"type": "array", "items": {"type": "string"}},
+    "chapters": {"type": "array"},
+    "caveats": {"type": "array", "items": {"type": "string"}},
+    "transcript": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["start", "end", "text"],
+        "properties": {
+          "start": {"type": "number", "minimum": 0},
+          "end": {"type": "number", "minimum": 0},
+          "text": {"type": "string"},
+          "speaker": {"type": "string"}
+        }
+      }
+    }
+  }
+}

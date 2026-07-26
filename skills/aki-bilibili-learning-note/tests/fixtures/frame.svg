@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#153e3a"/>
+  <rect x="80" y="80" width="1120" height="560" fill="#f7f5ef"/>
+  <rect x="120" y="130" width="14" height="320" fill="#f4c95d"/>
+  <text x="180" y="245" fill="#18201f" font-family="sans-serif" font-size="58" font-weight="700">Long Video Learning Note</text>
+  <text x="180" y="340" fill="#0b6b63" font-family="sans-serif" font-size="36">A timestamped learning moment</text>
+  <text x="180" y="510" fill="#65706d" font-family="sans-serif" font-size="28">12:34 · Return to the original video</text>
+</svg>
