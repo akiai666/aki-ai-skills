@@ -5,6 +5,7 @@ Public Aki AI skill templates.
 This repository contains selected public skills from Aki's private skill workspace. It currently contains:
 
 - `aki-ip-viral-cover`: generate three high-impact Aki IP cover variants from a title.
+- `vibe-coding-research-first`: research existing products and open-source projects before an AI coding agent writes implementation code.
 
 ## Usage
 

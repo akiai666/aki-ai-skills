@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vibe Coding：先调研，再开发"
+  short_description: "在写代码前完成调研、比较和 Build or Buy 判断"
+  default_prompt: "Use $vibe-coding-research-first to research this product idea before writing code."

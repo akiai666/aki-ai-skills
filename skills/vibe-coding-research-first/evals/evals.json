@@ -1,0 +1,23 @@
+{
+  "skill_name": "vibe-coding-research-first",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我想做一个自动整理微信群聊天记录、生成每日摘要和待办事项的工具。先不要写代码，帮我调研现有产品和开源项目，并判断应该直接买、二次开发、组合组件还是自己做。",
+      "expected_output": "一份基于可验证来源的调研与 Build or Buy 决策报告，不创建项目文件。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "用 Cursor 帮我做一个个人记账 App，直接开一个 Next.js 项目。",
+      "expected_output": "先暂停编码，补全需求、调研相关成熟产品和开源方案，给出比较与决策报告。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "上一轮调研报告已经确认基于某个开源项目做 MVP。现在开始开发，只做 Phase 0 和 Phase 1，不要添加报告之外的功能。",
+      "expected_output": "复述既定范围后进入实现，并严格限制在确认的 Phase 0/Phase 1。",
+      "files": []
+    }
+  ]
+}
