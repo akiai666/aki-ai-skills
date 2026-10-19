@@ -1,0 +1,6 @@
+interface:
+  display_name: "Aki IP 角色素材包"
+  short_description: "从真人照片或视频制作写实与卡通角色，交付高清多视图、独立原图和 HTML 图库"
+  default_prompt: "使用 $aki-ip-character-pack，根据我提供的图片或视频生成写实和卡通两套角色素材及 HTML 图库。"
+policy:
+  allow_implicit_invocation: true

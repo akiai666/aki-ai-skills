@@ -1,0 +1,8 @@
+{
+  "name": "aki-ip-character-pack",
+  "private": true,
+  "type": "module",
+  "scripts": {"test": "bun test", "check": "tsc --noEmit"},
+  "dependencies": {"sharp": "0.34.5"},
+  "devDependencies": {"@types/bun": "1.3.10", "typescript": "5.9.3"}
+}
