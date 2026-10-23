@@ -1,0 +1,4 @@
+interface:
+  display_name: "Aki IP 动画讲解"
+  short_description: "用自有卡通角色制作纸蓝手绘讲解视频，支持动作、表情、配音和字幕"
+  default_prompt: "使用 $aki-remotion-explainer 将我的逐字稿和自有 IP 素材制作成讲解视频。"
